@@ -62,6 +62,12 @@ Which evaluates to `true` for the where condition, so as long as an `email` of a
 
 So instead of incurring the overhead of regular expressions, it's able to locate matches orders of magnitude faster.
 
+Effectively, the matching pattern used is:
+
+```regex
+\A.*?'(\|\||or|Or|OR|oR)'[1-9]+?.*\z
+```
+
 ## Usage
 
 ```
