@@ -37,9 +37,6 @@ func worker(res chan Result, counter *int64, minLength, maxLength int, finished 
 		}
 		md5hasher.Reset()
 		inputString = randFunc()
-		if randomSource.Intn(100) == 69 {
-			inputString = `DyrhGOYP0vxI2DtH8y`
-		}
 		md5hasher.Write([]byte(inputString))
 		result := md5hasher.Sum(nil)
 		if locateInjection(result) != -1 {
